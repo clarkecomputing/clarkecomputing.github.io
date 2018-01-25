@@ -19,7 +19,7 @@ animation-duration:2s;
 div {
 webkit-transition: height 1s; 
 transition: height 1s;
-  text-align:center;
+  padding:5px;
 }
 h1 {
 float:left;
@@ -366,18 +366,6 @@ x_Close
 <h3>
 Contact Us
 </h3>
-<form action="thanks.php" method="post">
-<input type="text" name="name" placeholder="Name" style="color:white;border-radius:20px; background-color:black; font-size:125%;" required>
-<br>
-<input type="email" name="email" placeholder="Email" style="color:white;border-radius:20px; background-color:black; font-size:125%;" required>
-<br>
-How can we help you?
-<br>
-<textarea name="message" style="color:white;border-radius:20px; background-color:black; font-size:125%;" rows="7" cols="50" required>
-</textarea>
-<br>
-<input type="submit" style="background-color:black;color:white; font-size:100%;border-radius:20px;" value="Send Message"> 
-</form>
 <br>
 <a href="tel:(505)336-0208">
 <h3 style="margin:auto;">
@@ -503,25 +491,6 @@ Trained in Adobe Photoshop and aesthetic design
 x_Close
 </h4>
 </div>
-<?php
-
-if ($_GET['form']=='completed') {
-?>
-<div id="w6" style="display:block;position:absolute; top:20%;left:1%;width:98%; background-color:black; color:white; border: 10px solid; border-radius:20px; font-size:175%; padding-bottom:-30px;">
-<h3>
-Thanks for your business!
-</h3>
-<h4>
-A customer service agent will be in contact with you shortly in order to personalize your order. We look forward to doing business with you shortly!
-</h4>
-<h4 style="float:right; padding-right:20px;" onclick="cw()">
-x_Close
-</h4>
-</div>
-<?php
-}
-?>
-
 
 </div>
 <script>

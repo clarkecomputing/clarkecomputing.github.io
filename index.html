@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html>
 <head>
@@ -15,23 +16,9 @@ color:white;
 animation-name:bgt;
 animation-duration:2s;
 }
-.infobox{
-  display:none; 
-  position:absolute; 
-  top:20%;
-  left:15%;
-  width:70%; 
-  background-color:black; 
-  color:white; 
-  border: 10px solid; 
-  border-radius:20px; 
-  font-size:175%; 
-  padding-bottom:-30px;
-  }
 div {
 webkit-transition: height 1s; 
 transition: height 1s;
-  padding:5px;
 }
 h1 {
 float:left;
@@ -67,6 +54,7 @@ color:white;
 }
 div {
 margin:auto;
+float:left;
 }
 #b1 {
 animation-name:blink1;
@@ -138,7 +126,7 @@ to {background-color:black ;}
 }
 </style>
 <body>
-<div style="margin-left:auto; margin-right:auto;float:left;">
+<div style="margin-left:auto; margin-right:auto;">
 <div style="margin:auto;display:block; width:100%;">
 <h1 onlclick="cw()" style="margin: auto; padding:50px;">
 &#60Clarke>&#60/Computing>
@@ -193,13 +181,17 @@ Vibrant
 </div>
 <div style="margin:auto;display:inline-block;">
 <h1 id="i1" onclick="view2()">
-Modern Marketing
+Web Marketing
 </h1>
 <h2 id="b3">Specific 
 </h2>
 <h2 id="b1">
 Useful 
 </h2>
+<a href="http://esperanto.org">
+<h2 id="b2">
+Universal</h2>
+</a>
 </div>
 <div style="margin:auto;display:inline-block;">
 <h2 id="b4">
@@ -207,7 +199,7 @@ Picturesque
 </h2>
 <h2 id="b5">Esteemed
 </h2>
-<a href="https://en.m.wikipedia.org/wiki/File:Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg" target="_blank"><h2 id="b2">Beautiful</h2>
+<a href="https://en.m.wikipedia.org/wiki/File:Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg"><h2 id="b2">Beautiful</h2>
 </a id="b3">
 <h2 id="b2">
 Excite
@@ -222,12 +214,10 @@ Tasteful
 </h2>
 <h2 id="b3">
 Fluid 
-</h2>
-<h2 id="b1">
-Reliable
+</h2><h2 id="b1">Reliable
 </h2>
 <h1 id="i1" onclick="view3()">
-Data Analytics
+App Design 
 </h1>
 <h2 id="b2">
 Elegant
@@ -262,7 +252,7 @@ Impact</h2>
 <h2 id="b4">
 Bold
 </h2>
-<a>
+<a href="">
 <h2 id="b2">
 Games
 </h2>
@@ -280,7 +270,7 @@ Necessary
 <h2 id="b2">
 Stimulating 
 </h2>
-<a href="http://coke.com" target="_blank">
+<a href="http://coke.com">
 <h2 id="b3">
 Refreshing
 </h2>
@@ -304,7 +294,7 @@ Sublime
 <h2 id="b1">
 Creative
 </h2>
-<a href="http://wikipedia.org" target="_blank">
+<a href="http://wikipedia.org">
 <h2 id="b5">
 Knowledgeable
 </h2>
@@ -335,13 +325,8 @@ Powerful
 Inspiring
 </h2>
 </div>
-
-  
-  
-  
-  
-  
-<div id="w1" class="infobox" style=""><h3>
+<div id="w1" style="display:none; position:absolute; top:20%;left:1%;width:98%; background-color:black; color:white; border: 10px solid; border-radius:20px; font-size:175%; padding-bottom:-30px;">
+<h3>
 Website Design
 </h3>
 <h3>
@@ -376,12 +361,22 @@ Let us take care of all your hosting needs!
 x_Close
 </h4>
 </div>
-  
-  
-<div id="w5" class="infobox">
+<div id="w5" style="display:none;position:absolute; top:20%;left:1%;width:98%; background-color:black; color:white; border: 10px solid; border-radius:20px; font-size:125%;padding-bottom:-30px;">
 <h3>
 Contact Us
 </h3>
+<form action="thanks.php" method="post">
+<input type="text" name="name" placeholder="Name" style="color:white;border-radius:20px; background-color:black; font-size:125%;" required>
+<br>
+<input type="email" name="email" placeholder="Email" style="color:white;border-radius:20px; background-color:black; font-size:125%;" required>
+<br>
+How can we help you?
+<br>
+<textarea name="message" style="color:white;border-radius:20px; background-color:black; font-size:125%;" rows="7" cols="50" required>
+</textarea>
+<br>
+<input type="submit" style="background-color:black;color:white; font-size:100%;border-radius:20px;" value="Send Message"> 
+</form>
 <br>
 <a href="tel:(505)336-0208">
 <h3 style="margin:auto;">
@@ -392,9 +387,7 @@ Contact Us
 x_Close
 </h4>
 </div>
-
-  
-<div id="w2" class="infobox">
+<div id="w2" style="display:none;position:absolute; top:20%;left:1%;width:98%; background-color:black; color:white; border: 10px solid; border-radius:20px; font-size:175%; padding-bottom:-30px;">
 <h3>
 Web Marketing
 </h3>
@@ -416,10 +409,12 @@ Start your ad campaign with us today!
 x_Close
 </h4>
 </div>
-
-<div id="w3" class="infobox">
+<div id="w3" style="display:none;position:absolute; top:20%;left:1%;width:98%; background-color:black; color:white; border: 10px solid; border-radius:20px; font-size:175%; padding-bottom:-30px;">
 <h3>
-Data Analytics
+App Design
+</h3>
+<h3>
+$100/hr
 </h3>
 <ul style="list-style-type:square;">
 <li>
@@ -447,8 +442,7 @@ Excel Spreadsheet
 x_Close
 </h4>
 </div>
-
-<div id="w4" class="infobox">
+<div id="w4" style="display:none;position:absolute; top:20%;left:1%;width:98%; background-color:black; color:white; border: 10px solid; border-radius:20px; font-size:175%; padding-bottom:-30px;">
 <h3>
 Meet the Team
 </h3>
@@ -508,6 +502,25 @@ Trained in Adobe Photoshop and aesthetic design
 x_Close
 </h4>
 </div>
+<?php
+
+if ($_GET['form']=='completed') {
+?>
+<div id="w6" style="display:block;position:absolute; top:20%;left:1%;width:98%; background-color:black; color:white; border: 10px solid; border-radius:20px; font-size:175%; padding-bottom:-30px;">
+<h3>
+Thanks for your business!
+</h3>
+<h4>
+A customer service agent will be in contact with you shortly in order to personalize your order. We look forward to doing business with you shortly!
+</h4>
+<h4 style="float:right; padding-right:20px;" onclick="cw()">
+x_Close
+</h4>
+</div>
+<?php
+}
+?>
+
 
 </div>
 <script>

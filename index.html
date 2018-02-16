@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html>
 <head>
@@ -51,6 +50,7 @@ transition: color 1s;
 a { 
 text-decoration:none;
 color:white;
+cursor:pointer;
 }
 div {
 margin:auto;
@@ -217,7 +217,7 @@ Fluid
 </h2><h2 id="b1">Reliable
 </h2>
 <h1 id="i1" onclick="view3()">
-App Design 
+Data Analytics
 </h1>
 <h2 id="b2">
 Elegant
@@ -252,11 +252,9 @@ Impact</h2>
 <h2 id="b4">
 Bold
 </h2>
-<a href="">
 <h2 id="b2">
 Games
 </h2>
-</a>
 <h2 id="b1">
 Mindful</h2>
 </div>
@@ -411,7 +409,7 @@ x_Close
 </div>
 <div id="w3" style="display:none;position:absolute; top:20%;left:1%;width:98%; background-color:black; color:white; border: 10px solid; border-radius:20px; font-size:175%; padding-bottom:-30px;">
 <h3>
-App Design
+Data Analytics
 </h3>
 <h3>
 $100/hr
@@ -452,75 +450,11 @@ Zakery Clarke
 </h3>
 <img src="zak.png" style="width:80%;border-radius:50%;">
 </div>
-<div id="sb1" onclick="s4()" style="display:none;float:left; width:30%;height:50%;">
-<h3 style="">
-Executive Programmer
-</h3>
-<p>
-An expert web content and backend developer
-</p>
-<a href="mailto:zakeryt@zakeryclarke.com">
-[Email]
-</a>
-</div>
-<div id="sa2" onclick="s2()" style="float:left; width:30%; padding-left:3%;">
-<h3 style="float:left;">
-Kathleen Hess
-</h3>
-<img src="kathleen.png" style="width:75%;border-radius:50%;">
-</div>
-<div id="sb2" onclick="s5 ()" style="display:none;float:left; width:30%; padding-left:3%; height:50%;">
-<h3 style="">
-Business Coordinator
-</h3>
-<p>
-Your personal concierge to our business
-</p>
-<a href="mailto:kathleenh@zakeryclarke.com">
-[Email]
-</a>
-</div>
-<div id="sa3" onclick="s3()" style="float:left; width:30%; padding-left:3%;">
-<h3 style="float:left;">
-Nolan Di Greco
-</h3>
-<img src="nolan.png" style="width:80%;border-radius:50%;">
-</div>
-<div id="sb3" onclick="s6()" style="display:none; float:left; width:30%; padding-left:3%; height:50%;">
-<h3 style="">
-Graphic <br>Designer
-</h3>
-<p>
-Trained in Adobe Photoshop and aesthetic design
-</p>
-<a href="mailto:noland@zakeryclarke.com">
-[Email]
-</a>
-</div>
 <br>
 <h4 style="float:right; padding-right:20px;" onclick="cw()">
 x_Close
 </h4>
 </div>
-<?php
-
-if ($_GET['form']=='completed') {
-?>
-<div id="w6" style="display:block;position:absolute; top:20%;left:1%;width:98%; background-color:black; color:white; border: 10px solid; border-radius:20px; font-size:175%; padding-bottom:-30px;">
-<h3>
-Thanks for your business!
-</h3>
-<h4>
-A customer service agent will be in contact with you shortly in order to personalize your order. We look forward to doing business with you shortly!
-</h4>
-<h4 style="float:right; padding-right:20px;" onclick="cw()">
-x_Close
-</h4>
-</div>
-<?php
-}
-?>
-
 
 </div>
 <script>
@@ -587,32 +521,7 @@ document.getElementById('w1').style.display = 'none';
 document.getElementById('w6').style.display = 'none';
 }
 
-function s1() {
-document.getElementById('sb1').style.display = 'block';
-document.getElementById('sa1').style.display = 'none';
-}
-function s2() {
-document.getElementById('sb2').style.display = 'block';
-document.getElementById('sa2').style.display = 'none';
 
-}
-function s3() {
-document.getElementById('sb3').style.display = 'block';
-document.getElementById('sa3').style.display = 'none';
-}
-
-function s4() {
-document.getElementById('sa1').style.display = 'block';
-document.getElementById('sb1').style.display = 'none';
-}
-function s5() {
-document.getElementById('sa2').style.display = 'block';
-document.getElementById('sb2').style.display = 'none';
-}
-function s6() {
-document.getElementById('sa3').style.display = 'block';
-document.getElementById('sb3').style.display = 'none';
-}
 </script>
 </body>
 </html

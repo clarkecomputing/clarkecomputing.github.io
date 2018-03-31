@@ -1,10 +1,13 @@
+
 <!doctype html>
 <html>
 <head>
 <meta name="theme-color" content="#000000" />
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
-<link rel="stylesheet" type="text/css" href="theme.css">
+<!--
+<link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">-->
+<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif" rel="stylesheet">
 <title>
 &#60Clarke>&#60/Computing>
 </title>
@@ -12,516 +15,316 @@
 body {
 background-color:black;
 color:white;
-animation-name:bgt;
-animation-duration:2s;
+font-family: 'Orbitron', sans-serif;
 }
-div {
-webkit-transition: height 1s; 
-transition: height 1s;
-}
-h1 {
-float:left;
-text-align:center;
-font-size:5.5vmin;
-padding:0px;
-margin:10px;
-margin-top:0px;
-font-weight:bold;
-}
-h3 {
-font-size:4.5vmin;
-padding:0px;
-margin:10px;
-margin-top:0px;
-font-weight:bold;
-}
-li {
-font-size:4.0vmin;
-}
-h2 {
-font-size:3.5vmin;
-opacity:0.6;
-padding-bottom:20px;
-margin:10px;
-float:left;
-webkit-transition: color 1s; 
-transition: color 1s;
-}
-a { 
-text-decoration:none;
-color:white;
-cursor:pointer;
-}
-div {
-margin:auto;
-float:left;
-}
-#b1 {
-animation-name:blink1;
-animation-duration:4s;
-animation-iteration-count: infinite;
-}
-#b2 {
-animation-name:blink2;
-animation-duration:8s;
-animation-iteration-count: infinite;
+::-webkit-scrollbar {
+    width: 12px;
 }
 
-#b3 {
-animation-name:blink3;
-animation-duration:7s;
-animation-iteration-count: infinite;
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(255,255,255,0.3);
+    border-radius: 10px;
 }
-#b4 {
-animation-name:blink4;
-animation-duration:5s;
-animation-iteration-count: infinite;
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(255,255,255,0.5);
 }
-#b5 {
-animation-name:blink5;
-animation-duration:6s;
-animation-iteration-count: infinite;
+.container{
+box-shadow: inset 1px 1px 20px white;
+width:100%;
+text-align:center;
+padding:3px;
 }
-h2:hover {
-color:black;
+.menu{
+  color:white;
+  font-size:150%;
 }
-@keyframes bgt{ 
-from {background-color:white;}
-to {background-color:black ;}
+p{
+  margin:20px;
 }
-@keyframes blink1 {
-0% {opacity:0;}
-25%{opacity:0.6;}
-50% {opacity:0.3;}
-75% {opacity:1;}
-100% {opacity:0;}
+.user{
+  color:black;
+  display:block;
+  position:static;
+  margin:5px;
+  width:80%;
+  padding:10px;
+  background-color:#91bee0;
+  border-radius:50px;
+  right:0px;
+  margin-bottom:10px;
+  /*text-align:right;*/
 }
-@keyframes blink2 {
-0% {opacity:0.4;}
-25%{opacity:0.5;}
-50% {opacity:0.2;}
-75% {opacity:0.5;}
-100% {opacity:0.4;}
+.bot{
+  color:black;
+  display:block;
+  position:static;
+  margin:5px;
+  width:80%;
+  padding:10px;
+  background-color:#e0e0e0;
+  border-radius:50px;
+  margin-bottom:10px;
 }
-@keyframes blink3 {
-0% {opacity:0;.1}
-25%{opacity:0.2;}
-50% {opacity:0.4;}
-75% {opacity:0.8;}
-100% {opacity:0.1;}
-}
-@keyframes blink4 {
-0% {opacity:0.2;}
-25%{opacity:0.6;}
-50% {opacity:1;}
-75% {opacity:0.6;}
-100% {opacity:0.2;}
-}
-@keyframes blink5 {
-0% {opacity:0.6;}
-25%{opacity:0.7;}
-50% {opacity:0.5;}
-75% {opacity:0.1;}
-100% {opacity:0.6;}
+a{
+  color:white;
 }
 </style>
 <body>
-<div style="margin-left:auto; margin-right:auto;">
-<div style="margin:auto;display:block; width:100%;">
-<h1 onlclick="cw()" style="margin: auto; padding:50px;">
+
+<canvas id="backdrop" style="z-index:-1;position:fixed;background-color:black;">
+</canvas>
+<img onclick="showbot();" style="border:5px white solid;position:fixed;right:1vw;top:1vw;border-radius:50%;width:10%;z-index:100;box-shadow: inset 1px 1px 20px white;" src="robut.png">
+<img onclick="up();" style="border:5px white solid;position:fixed;right:2.5vw;bottom:1vw;border-radius:50%;width:5%;z-index:30;box-shadow: inset 1px 1px 20px white;" src="arrow.png">
+
+<div id="chatbotdiv" style="left:0%;top:0%;box-shadow: inset 1px 1px 20px white;position:fixed;background-color:black;color:white;width:100vw;height:100vh;overflow:hidden;border:1px white solid;;display:none;z-index:50;">
+
+  <div id="msg" style="height:80%;overflow-y:scroll;overflow-x:hidden;display:block;width:98%;margin-top:10px;">
+
+  <div class="bot">
+  Hi there. My name is Chester Chatbot! How can I help you?
+  </div>
+
+
+
+  </div>
+   <div style="height:15%;">
+
+  <input id="textio" type="text" style="width:75%;margin-left:3%;height:60%;vertical-align:middle;">
+  <button onclick="adduser();" type="submit" style="border-radius:5px;max-width:15%;vertical-align:middle;max-height:100%;">
+  <img src="http://zakerytclarke.github.io/assets/materialicons/send.png" style="width:100%;">
+    </div>
+  </button>
+  </div>
+
+<div style="position:fixed;width:98vw;height:100vh;background-color:rgba(0,0,0,0.7);overflow:auto;">
+<div style="width:80%;min-height:80vh;margin-left:10%;background-color:rgba(0,0,0,0.8);padding:10px;">
+<div id="top" class="container">
+<h1>
 &#60Clarke>&#60/Computing>
 </h1>
-<img src="logo.png" onclick="cw()" height=80vmin style="size:50%;float:right;padding:30px;">
-</div>
-<br>
-<div style="margin:auto;display:inline-block;">
-<h2 id="b1">
-Innovative
-</h2>
-<h2 id="b2">
-Action
-</h2>
-<h2 id="b5">
-Inspiring
-</h2>
-<h2 id="b3">
-Form
-</h2>
-<h2 id="b2">Versatility</h2>
-</div>
-<div style="margin:auto;display:inline-block;">
-<h2 id="b3">Driven
-</h2>
-<h1 onclick="view1()">
-Website Design
-</h1>
-<h2 id="b1">
-Focused
-</h2>
-<h2 id="b4">
-Expand
+<h2 id="typey">
+>_
 </h2>
 </div>
-<br>
-<div style="margin:auto;display:inline-block;">
-<h2 id="b1">
-User
-</h2>
-<h1 id="i2" onclick="view2()" style="display:none;">
-Web Marketing
-</h1>
-<h2 id="b4">Oriented
-</h2">
-<h2 id="b4">Sourced</h2>
-<h2 id="b5">
-Vibrant
-</h2>
-<h2 id="b2">Significant 
-</h2>
+<div class="container" style="width:100%;text-align:center;padding-top:15px;padding-bottom:10px;">
+<a href="#about" class="menu">
+About | </a>
+<a href="#web" class="menu">
+Web Design | </a>
+<a href="#data" class="menu">
+Data Analytics | </a>
+<a href="#contact" class="menu">
+Contact Us </a>
 </div>
-<div style="margin:auto;display:inline-block;">
-<h1 id="i1" onclick="view2()">
-Web Marketing
-</h1>
-<h2 id="b3">Specific 
+
+<div class="container" id="about">
+<h2>
+Meet Your Team
 </h2>
-<h2 id="b1">
-Useful 
-</h2>
-<a href="http://esperanto.org">
-<h2 id="b2">
-Universal</h2>
-</a>
-</div>
-<div style="margin:auto;display:inline-block;">
-<h2 id="b4">
-Picturesque 
-</h2>
-<h2 id="b5">Esteemed
-</h2>
-<a href="https://en.m.wikipedia.org/wiki/File:Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg"><h2 id="b2">Beautiful</h2>
-</a id="b3">
-<h2 id="b2">
-Excite
-</h2>
-<h2 id="b1">
-Yours
-</h2>
-</div>
-<div style="margin:auto;display:inline-block;">
-<h2 id="b3">
-Tasteful
-</h2>
-<h2 id="b3">
-Fluid 
-</h2><h2 id="b1">Reliable
-</h2>
-<h1 id="i1" onclick="view3()">
-Data Analytics
-</h1>
-<h2 id="b2">
-Elegant
-</h2>
-</div>
-<div style="margin:auto;display:inline-block;">
-<h2 id="b5">Available
-</h2>
-<h2 id="b4">
-Sharp
-</h2>
-<h2 id="b1">Pervasive
-</h2>
-<h2 id="b3">
-Interesting
-</h2>
-<h1 id="i4" onclick="view4()" style="display:none;">
-About
-</h1>
-<h2 id="b2">Open
-</h2>
-</div>
-<div style="margin:auto;display:inline-block;">
-<h2 id="b5">
-Functional
-</h2>
-<h1 id="i3" onclick="view4()">
-About
-</h1>
-<h2 id="b2">
-Impact</h2>
-<h2 id="b4">
-Bold
-</h2>
-<h2 id="b2">
-Games
-</h2>
-<h2 id="b1">
-Mindful</h2>
-</div>
-<div style="margin:auto;display:inline-block;">
-<h2 id="b5">
-Extensive
-</h2>
-<h2 id="b3">
-Necessary
-</h2>
-<h2 id="b2">
-Stimulating 
-</h2>
-<a href="http://coke.com">
-<h2 id="b3">
-Refreshing
-</h2>
-</a>
-</div>
-<div style="margin:auto;display:inline-block;">
-<h2 id="b1">
-Multitude
-</h2>
-<h2 id="b2">
-Existential
-</h2>
-<h1 onclick="view5()">
-Contact Us
-</h1>
-<h2 id="b4">
-Sublime
-</h2>
-</div>
-<div style="margin:auto;display:inline-block;">
-<h2 id="b1">
-Creative
-</h2>
-<a href="http://wikipedia.org">
-<h2 id="b5">
-Knowledgeable
-</h2>
-</a>
-<h2 id="b2">
-Shock
-</h2>
-<h2 id="b3">
-Motivated 
-</h2>
-<h2 id="b5">
-Us
-</h2>
-<div style="margin:auto;display:inline-block;">
-<h2 id="b1">
-Adaptable
-</h2>
-<h2 id="b4">
-Scenic
-</h2">
-<h2 id="b4">
-Energetic
-</h2>
-<h2 id="b5">
-Powerful
-</h2>
-<h2 id="b2">
-Inspiring
-</h2>
-</div>
-<div id="w1" style="display:none; position:absolute; top:20%;left:1%;width:98%; background-color:black; color:white; border: 10px solid; border-radius:20px; font-size:175%; padding-bottom:-30px;">
+<p>
+Here at &#60Clarke>&#60/Computing>, we have the expertise to create your projects. With over 5 years experience in web design and graphics, we are guaranteed to deliver an on-time, visually stunning, and most important-functioning product. Contact us to see how we can improve your business today!
+</p>
+<div style="width:33%;text-align:center;display:inline-block;">
+<img src="zak.png" style="border-radius:50%;width:70%;">
 <h3>
-Website Design
-</h3>
-<h3>
-$500+
-</h3>
-<ul style="list-style-type:square;">
-<li>
-Our Trained Staff will design you a beautiful website that meets all of your needs.
-</li>
-<li>
-Let us create a sleek website that attracts attention to your business
-</li>
-<li>
-Functional websites that's work on all devices
-</li>
-</ul>
-<h3>
-Website Hosting
-</h3>
-<h3>
-$50/month
-</h3>
-<ul style="list-style-type:square;">
-<li>
-One flat fee will give you a custom domain name and a website that is up and running 24/7
-</li>
-<li>
-Let us take care of all your hosting needs!
-</li>
-</ul>
-<h4 style="float:right; padding-right:20px;" onclick="cw()">
-x_Close
-</h4>
-</div>
-<div id="w5" style="display:none;position:absolute; top:20%;left:1%;width:98%; background-color:black; color:white; border: 10px solid; border-radius:20px; font-size:125%;padding-bottom:-30px;">
-<h3>
-Contact Us
-</h3>
-<form action="thanks.php" method="post">
-<input type="text" name="name" placeholder="Name" style="color:white;border-radius:20px; background-color:black; font-size:125%;" required>
-<br>
-<input type="email" name="email" placeholder="Email" style="color:white;border-radius:20px; background-color:black; font-size:125%;" required>
-<br>
-How can we help you?
-<br>
-<textarea name="message" style="color:white;border-radius:20px; background-color:black; font-size:125%;" rows="7" cols="50" required>
-</textarea>
-<br>
-<input type="submit" style="background-color:black;color:white; font-size:100%;border-radius:20px;" value="Send Message"> 
-</form>
-<br>
-<a href="tel:(505)336-0208">
-<h3 style="margin:auto;">
-1.505.336.0208
-</h3>
-</a>
-<h4 style="float:right; padding-right:20px;" onclick="cw()">
-x_Close
-</h4>
-</div>
-<div id="w2" style="display:none;position:absolute; top:20%;left:1%;width:98%; background-color:black; color:white; border: 10px solid; border-radius:20px; font-size:175%; padding-bottom:-30px;">
-<h3>
-Web Marketing
-</h3>
-<h3>
-$100/month
-</h3>
-<ul style="list-style-type:square;">
-<li>
-Let us set up your social media and generate interest in your business
-</li>
-<li>
-We use modern SEO techniques in order to boost your popularity
-</li>
-<li>
-Start your ad campaign with us today!
-</li>
-</ul>
-<h4 style="float:right; padding-right:20px;" onclick="cw()">
-x_Close
-</h4>
-</div>
-<div id="w3" style="display:none;position:absolute; top:20%;left:1%;width:98%; background-color:black; color:white; border: 10px solid; border-radius:20px; font-size:175%; padding-bottom:-30px;">
-<h3>
-Data Analytics
-</h3>
-<h3>
-$100/hr
-</h3>
-<ul style="list-style-type:square;">
-<li>
-Let us create comprehensive applications to help your business expand and become more efficient
-</li>
-</ul>
-<h3>
-App Platforms:
-</h3>
-<ul style="list-style-type:square;">
-<li>
-Web Apps
-</li>
-<li>
-Android Apps
-</li>
-<li>
-Windows OS
-</li>
-<li>
-Excel Spreadsheet 
-</li>
-</ul>
-<h4 style="float:right; padding-right:20px;" onclick="cw()">
-x_Close
-</h4>
-</div>
-<div id="w4" style="display:none;position:absolute; top:20%;left:1%;width:98%; background-color:black; color:white; border: 10px solid; border-radius:20px; font-size:175%; padding-bottom:-30px;">
-<h3>
-Meet the Team
-</h3>
-<div id="sa1" onclick="s1()" style="float:left; width:30%;">
-<h3 style="float:left;">
 Zakery Clarke
 </h3>
-<img src="zak.png" style="width:80%;border-radius:50%;">
+<p>
+CEO/Programmer
+</p>
 </div>
-<br>
-<h4 style="float:right; padding-right:20px;" onclick="cw()">
-x_Close
-</h4>
+<div style="width:33%;text-align:center;display:inline-block;">
+<img src="nolan.png" style="border-radius:50%;width:70%;">
+<h3>
+Nolan DiGreco
+</h3>
+<p>
+Front-End Designer
+</p>
+</div>
 </div>
 
+<div id="web" class="container">
+<h2>
+Portfolio
+</h2>
+<img src="cb.jpg" style="width:80%;margin-left:5%;margin-top:30px;">
+<img src="cc.jpg" style="width:80%;margin-left:5%;margin-top:30px;">
+<img src="et.jpg" style="width:80%;margin-left:5%;margin-top:30px;">
+<img src="eb.jpg" style="width:80%;margin-left:5%;margin-top:30px;">
+</div>
+<div class="container">
+<h2>
+Our Developement Stack
+</h2>
+<img src="html.png" style="width:23%;border-radius:50%;display:inline-block;background-color:white;">
+<img src="css.png" style="width:23%;border-radius:50%;display:inline-block;background-color:white;">
+<img src="js.png" style="width:23%;border-radius:50%;display:inline-block;background-color:white;">
+<img src="wp.png" style="width:23%;border-radius:50%;display:inline-block;background-color:black;">
+<p>
+That's right, unlike most web design firms, we use a pure vanilla developement stack, ensuring code compatability, and bug free websites that are fine tuned to meet your every need. Handcrafted from scratch, every time.
+</p>
+</div>
+<div id="data" class="container">
+<h2>
+Data Analytics
+</h2>
+<p>
+Are you looking to launch your business into the modern world? We have created and worked with a variety of data science technologies that allow us to gain insights on business performance, to leverage modern technologies to improve communication, and to create complex learning systems.
+</p>
+<h2>
+Services
+</h2>
+<div style="width:30%;text-align:center;display:inline-block;">
+<img src="https://zakerytclarke.github.io/chatbot.js/robut.png" style="border-radius:50%;width:70%;border:white 3px solid;">
+<h3>
+Chatbot.js
+</h3>
+<p>
+Advanced Chatbot Framework
+</p>
+</div>
+<div style="width:30%;text-align:center;display:inline-block;">
+<img src="https://zakerytclarke.github.io/nautilus.js/nautilus.jpg" style="border-radius:50%;width:70%;border:white 3px solid;">
+<h3>
+Neural Network
+</h3>
+<p>
+Leveraging Machine Learning
+</p>
+</div>
+<div style="width:30%;text-align:center;display:inline-block;">
+<img src="analysis.jpeg" style="border-radius:50%;width:70%;border:white 3px solid;">
+<h3>
+Data Analysis
+</h3>
+<p>
+Gaining Business Insights
+</p>
+</div>
+
+</div>
+<div id="contact" class="container">
+<h2>
+Contact Us
+</h2>
+<h3>
+<a href="mailto:clarkecomputing@gmail.com">
+clarkecomputing@gmail.com
+</a>
+</h3>
+<h3>
+<a href="tel:1.505.336.0208">
+1.505.336.0208
+</a>
+</h3>
 </div>
 <script>
-if (screen.height>screen.width) {
-document.getElementById('i1').style.display = 'block';
-document.getElementById('i2').style.display = 'none';
-document.getElementById('i3').style.display = 'block';
-document.getElementById('i4').style.display = 'none';
-} else {
-document.getElementById('i2').style.display = 'block';
-document.getElementById('i1').style.display = 'none';
-document.getElementById('i4').style.display = 'block';
-document.getElementById('i3').style.display = 'none';
+type("Your Online Presence Matters more than your Physical One.");
+
+function up(){
+  var url = location.href;               //Save down the URL without hash.
+  location.href = "#top";                 //Go to the target element.
+  history.replaceState(null,null,url);
+}
+
+function type(word){
+  document.getElementById("typey").innerHTML=document.getElementById("typey").innerHTML+word.substr(0,1);
+  if(word.length>0){
+  setTimeout(function(){type(word.substr(1, word.length))}, 50);
+    }else{
+
+      }
+  }
+  var canvas=document.getElementById("backdrop");
+  var ctx = canvas.getContext('2d');
+  canvas.width  = window.innerWidth;
+  canvas.height = window.innerHeight;
+  ctx.fillStyle="white";
+  ctx.strokeStyle="white";
+  ctx.lineWidth=1;
+  var h=canvas.height/2;
+  var w=canvas.width/2;
+  var sp=[];
+  var m=Math.max(w,h)
+  for(i=0;i<m;i=i+10){
+  sp.push(new spiral());
+  }
+  function spiral() {
+  this.sa=2*Math.PI*Math.random();
+  this.ea=2*Math.PI*Math.random();
+  this.speed=(Math.random()*10-5)/10;
+  }
+  setInterval(function(){refresh(); }, 100);
+  function refresh(){
+  ctx.clearRect(0,0,canvas.width, canvas.height);
+  for(i=0;i<sp.length;i=i+1){
+  ctx.beginPath();
+  ctx.arc(w,h,i*10,sp[i].sa,sp[i].ea);
+  sp[i].sa+=sp[i].speed;
+  sp[i].ea+=sp[i].speed;
+  //sp[i].speed+=(Math.random()*10-5)/50;;
+  ctx.stroke();
+  }
+  }
+</script>
+
+<script src="https://zakerytclarke.github.io/chatbot.js/chatbot.js">
+</script>
+<script src="chestercc.cb">
+</script>
+<script>
+function showbot(){
+
+  if(document.getElementById("chatbotdiv").style.display=="block"){
+    document.getElementById("chatbotdiv").style.display="none";
+  }else{
+    document.getElementById("chatbotdiv").style.display="block";
+  }
 }
 
 
-
-function cw() {
-document.getElementById('w1').style.display = 'none';
-document.getElementById('w2').style.display = 'none';
-document.getElementById('w3').style.display = 'none';
-document.getElementById('w4').style.display = 'none';
-document.getElementById('w5').style.display = 'none';
-document.getElementById('w6').style.display = 'none';
-}
-function view1() {
-document.getElementById('w1').style.display = 'block';
-document.getElementById('w2').style.display = 'none';
-document.getElementById('w3').style.display = 'none';
-document.getElementById('w4').style.display = 'none';
-document.getElementById('w5').style.display = 'none';
-document.getElementById('w6').style.display = 'none';
-}
-function view2() {
-document.getElementById('w2').style.display = 'block';
-document.getElementById('w1').style.display = 'none';
-document.getElementById('w3').style.display = 'none';
-document.getElementById('w4').style.display = 'none';
-document.getElementById('w5').style.display = 'none';
-document.getElementById('w6').style.display = 'none';
-}
-function view3() {
-document.getElementById('w3').style.display = 'block';
-document.getElementById('w2').style.display = 'none';
-document.getElementById('w1').style.display = 'none';
-document.getElementById('w4').style.display = 'none';
-document.getElementById('w5').style.display = 'none';
-document.getElementById('w6').style.display = 'none';
-}
-function view4() {
-document.getElementById('w4').style.display = 'block';
-document.getElementById('w2').style.display = 'none';
-document.getElementById('w3').style.display = 'none';
-document.getElementById('w1').style.display = 'none';
-document.getElementById('w5').style.display = 'none';
-document.getElementById('w6').style.display = 'none';
-}
-function view5() {
-document.getElementById('w5').style.display = 'block';
-document.getElementById('w2').style.display = 'none';
-document.getElementById('w3').style.display = 'none';
-document.getElementById('w4').style.display = 'none';
-document.getElementById('w1').style.display = 'none';
-document.getElementById('w6').style.display = 'none';
+function addbot(msg){
+  var p=document.getElementById("msg");
+    var newelem=document.createElement("div");
+newelem.setAttribute('class',"bot");
+    newelem.innerHTML=msg;
+p.appendChild(newelem);
+  scroll("msg");
 }
 
+function adduser(){
+  var input=document.getElementById("textio").value;
+
+if(input!=null&&input!=""){
+
+  var p=document.getElementById("msg");
+    var newelem=document.createElement("div");
+newelem.setAttribute('class',"user");
+  newelem.innerHTML=input;
+  document.getElementById("textio").value="";
+p.appendChild(newelem);
+
+addbot(bot.reply(input));
+}
+
+}
+
+function scroll(id){
+   var div = document.getElementById(id);
+   div.scrollTop = div.scrollHeight - div.clientHeight;
+}
+
+
+document.body.addEventListener( 'keyup', function (e) {
+  if ( e.keyCode == 13 ) {
+adduser();
+  }
+});
 
 </script>
+</div>
 </body>
 </html

@@ -16,6 +16,7 @@ body {
 background-color:black;
 color:white;
 font-family: 'Orbitron', sans-serif;
+font-size:125%;
 }
 ::-webkit-scrollbar {
     width: 12px;
@@ -70,6 +71,14 @@ p{
 a{
   color:white;
 }
+.form{
+  width:80%;
+  box-shadow: 1px 1px 20px white;
+    background-color:black;
+    color:white;
+    padding:10px;
+    margin:5px;
+}
 </style>
 <body>
 
@@ -83,7 +92,7 @@ a{
   <div id="msg" style="height:80%;overflow-y:scroll;overflow-x:hidden;display:block;width:98%;margin-top:10px;">
 
   <div class="bot">
-  Hi there. My name is Chester Chatbot! How can I help you?
+  Hi there. My name is Eliza! How can I help you?
   </div>
 
 
@@ -210,6 +219,19 @@ Gaining Business Insights
 <h2>
 Contact Us
 </h2>
+<h3 id="sentdiv" style="display:none;">
+Your message has been sent and you will receive a reply shortly.<br>Thank you!
+</h3>
+<div id="formdiv" style="width:100%;">
+<input id="name" type="text" placeholder="Name" class="form" required><br>
+<input id="email" type="email" placeholder="Email"class="form" required><br>
+<textarea id="msgform" class="form" placeholder="How can we help you?" rows="6">
+</textarea>
+<br>
+<button class="form" style="width:auto;border-radius:10%;" onclick="send()">
+Send
+</button>
+</div>
 <h3>
 <a href="mailto:clarkecomputing@gmail.com">
 clarkecomputing@gmail.com
@@ -221,12 +243,33 @@ clarkecomputing@gmail.com
 </a>
 </h3>
 </div>
+
+<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script type="text/javascript">
+     (function(){
+        emailjs.init("user_jREWum9z3YCWAG17rUsxu");
+     })();
+  </script>
+<script>
+function send(){
+  name=document.getElementById("name").value;
+  email=document.getElementById("email").value;
+  msg=document.getElementById("msgform").value;
+  sendemail(name,email,msg);
+  document.getElementById("formdiv").style.display="none";
+  document.getElementById("sentdiv").style.display="block";
+}
+
+function sendemail(name,email,msg){
+emailjs.send("gmail", "contact", {"name":name,"email":email,"msg":msg})
+  }
+</script>
 <script>
 type("Your Online Presence Matters more than your Physical One.");
 
 function up(){
-  var url = location.href;               //Save down the URL without hash.
-  location.href = "#top";                 //Go to the target element.
+  var url = location.href;
+  location.href = "#top";
   history.replaceState(null,null,url);
 }
 
@@ -255,7 +298,7 @@ function type(word){
   function spiral() {
   this.sa=2*Math.PI*Math.random();
   this.ea=2*Math.PI*Math.random();
-  this.speed=(Math.random()*10-5)/10;
+  this.speed=(Math.random()*10-5)/20;
   }
   setInterval(function(){refresh(); }, 100);
   function refresh(){
@@ -273,9 +316,85 @@ function type(word){
 
 <script src="https://zakerytclarke.github.io/chatbot.js/chatbot.js">
 </script>
-<script src="chestercc.cb">
+<script src="eliza.cb">
 </script>
 <script>
+var contactreply="Here's our contact information: clarkecomputing@gmail.com or 1.505.234.9665";
+bot.addreply("default",["n/a"],["I'm sorry, I don't quite understand that. Try asking me about the services we provide, our team, or our contact information"]);
+bot.addreply("default",["what","can","you","do"],["I can do many things! Try asking me about the services we provide, our team, or our contact information"]);
+
+bot.addreply("default",["contact"],[""],"contact");
+bot.addreply("default",["email"],[""],"contact");
+bot.addreply("default",["message"],[""],"contact");
+
+bot.addreply("default",["team"],["Sure, we have an experienced team, who would you like to know about?"],"team");
+bot.addreply("default",["staff"],["Sure, we have an experienced team, who would you like to know about?"],"team");
+bot.addreply("default",["employee"],["Sure, we have an experienced team, who would you like to know about?"],"team");
+
+bot.addreply("default",["services"],["Our team offers many services. We specialize in designing stellar websites for both business and personal use. We also work with Data Analysis in order to create insights and advance business technologies."]);
+bot.addreply("default",["products"],["Our team offers many services. We specialize in designing stellar websites for both business and personal use. We also work with Data Analysis in order to create insights and advance business technologies."]);
+bot.addreply("default",["web"],["We can take care of your entire website, from concept to deployment. We design all websites from scratch using modern standards that will allow you to easily deploy and maintain your website."]);
+bot.addreply("default",["design"],["We can take care of your entire website, from concept to deployment. We design all websites from scratch using modern standards that will allow you to easily deploy and maintain your website."]);
+bot.addreply("default",["data"],["We are expereienced in performing data analysis, creatng advanced systems, and gaining valuable insights for businesses."]);
+bot.addreply("default",["analysis"],["We are expereienced in performing data analysis, creatng advanced systems, and gaining valuable insights for businesses."]);
+bot.addreply("default",["analytics"],["We are expereienced in performing data analysis, creatng advanced systems, and gaining valuable insights for businesses."]);
+
+
+bot.addstate("team");
+bot.addreply("team",["n/a"],["I'm not sure who that is. If you're done learning about our staff, feel free to say 'exit'"]);
+bot.addreply("team",["exit"],["Ok. How else can I help you?"],"default");
+bot.addreply("team",["back"],["Ok. How else can I help you?"],"default");
+bot.addreply("team",["quit"],["Ok. How else can I help you?"]);
+bot.addreply("team",["nolan"],["Nolan DiGreco is a Front-End Web Designer who focuses in aesthetic design and User Interfaces."]);
+bot.addreply("team",["digreco"],["Nolan DiGreco is a Front-End Web Designer who focuses in aesthetic design and User Interfaces."]);
+bot.addreply("team",["zak"],["Zakery Clarke is a professional programmer who specializes in framework design and data analysis."]);
+bot.addreply("team",["clarke"],["Zakery Clarke is a professional programmer who specializes in framework design and data analysis."]);
+bot.addreply("team",["eliza"],["You want to learn about me? I'm flattered. I am Eliza, the chatbot who trys to help with our customer experience."]);
+bot.addreply("team",["bot"],["You want to learn about me? I'm flattered. I am Eliza, the chatbot who trys to help with our customer experience."]);
+
+bot.addstate("contact");
+bot.addreply("contact",["default"],["Would you like to send a message to our team?"]);
+bot.addreply("contact",["yes"],[""],"cname");
+bot.addreply("contact",["no"],["Ok, well here's our contact info just in case: clarkecomputing@gmail.com or 1(505)336-0208."],"default");
+bot.addreply("contact",["n/a"],["A simple yes or no will work."]);
+
+var cname="";
+var cemail="";
+var cmsg="";
+function setcname(){
+  cname=globalinput;
+  alert(cname);
+}
+function setcemail(){
+  cemail=globalinput;
+  alert(cemail);
+}
+function setcmsg(){
+alert("hi");
+  cmsg=globalinput;
+  alert(cmsg);
+}
+function csend(){
+  sendemail(cname,cemail,cmsg);
+}
+bot.addstate("cname");
+bot.addreply("cname",["default"],["What is your name?"]);
+bot.addreply("cname",["n/a"],[""],"cemail","setcname");
+
+bot.addstate("cemail");
+bot.addreply("cemail",["default"],["What is your email address?"]);
+bot.addreply("cemail",["n/a"],[""],"cmsg","setcemail");
+
+bot.addstate("cmsg");
+bot.addreply("cmsg",["default"],["What's your message?"]);
+bot.addreply("cmsg",["n/a"],["Your message has been succesfully sent."],"default","setcmsg");
+
+
+
+</script>
+
+<script>
+var globalinput="";
 function showbot(){
 
   if(document.getElementById("chatbotdiv").style.display=="block"){
@@ -299,7 +418,7 @@ function adduser(){
   var input=document.getElementById("textio").value;
 
 if(input!=null&&input!=""){
-
+  globalinput=input;
   var p=document.getElementById("msg");
     var newelem=document.createElement("div");
 newelem.setAttribute('class',"user");

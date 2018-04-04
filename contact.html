@@ -128,31 +128,33 @@ Data Analytics | </a>
 Contact Us </a>
 </div>
 
-<div class="container" id="about">
+<div id="contact" class="container">
 <h2>
-Meet Your Team
+Contact Us
 </h2>
-<p>
-Here at &#60Clarke>&#60/Computing>, we have the expertise to create your projects. With over 5 years experience in web design and graphics, we are guaranteed to deliver an on-time, visually stunning, and most important-functioning product. Contact us to see how we can improve your business today!
-</p>
-<div style="width:33%;text-align:center;display:inline-block;">
-<img src="zak.png" style="border-radius:50%;width:70%;">
-<h3>
-Zakery Clarke
+<h3 id="sentdiv" style="display:none;">
+Your message has been sent and you will receive a reply shortly.<br>Thank you!
 </h3>
-<p>
-CEO/Programmer
-</p>
+<div id="formdiv" style="width:100%;">
+<input id="name" type="text" placeholder="Name" class="form" required><br>
+<input id="email" type="email" placeholder="Email"class="form" required><br>
+<textarea id="msgform" class="form" placeholder="How can we help you?" rows="6">
+</textarea>
+<br>
+<button class="form" style="width:auto;border-radius:10%;" onclick="send()">
+Send
+</button>
 </div>
-<div style="width:33%;text-align:center;display:inline-block;">
-<img src="nolan.png" style="border-radius:50%;width:70%;">
 <h3>
-Nolan DiGreco
+<a href="mailto:clarkecomputing@gmail.com">
+clarkecomputing@gmail.com
+</a>
 </h3>
-<p>
-Front-End Designer
-</p>
-</div>
+<h3>
+<a href="tel:1.505.336.0208">
+1.505.336.0208
+</a>
+</h3>
 </div>
 
 <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>

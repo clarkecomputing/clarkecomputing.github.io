@@ -3,6 +3,7 @@
 <html>
 <head>
 <meta name="theme-color" content="#000000" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
 <!--
@@ -84,7 +85,7 @@ a{
 
 <canvas id="backdrop" style="z-index:-1;position:fixed;background-color:black;">
 </canvas>
-<!---   
+<!---
 <img onclick="showbot();" style="border:5px white solid;position:fixed;right:1vw;top:1vw;border-radius:50%;width:10%;z-index:100;box-shadow: inset 1px 1px 20px white;" src="robut.png">
 --->
 <!--
@@ -227,6 +228,30 @@ function type(word){
   }
   }
 </script>
+<!-- Start of Async Drift Code -->
+<script>
+!function() {
+var t;
+if (t = window.driftt = window.drift = window.driftt || [], !t.init) return t.invoked ? void (window.console && console.error && console.error("Drift snippet included twice.")) : (t.invoked = !0,
+t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ],
+t.factory = function(e) {
+return function() {
+  var n;
+  return n = Array.prototype.slice.call(arguments), n.unshift(e), t.push(n), t;
+};
+}, t.methods.forEach(function(e) {
+t[e] = t.factory(e);
+}), t.load = function(t) {
+var e, n, o, i;
+e = 3e5, i = Math.ceil(new Date() / e) * e, o = document.createElement("script"),
+o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + i + "/" + t + ".js",
+n = document.getElementsByTagName("script")[0], n.parentNode.insertBefore(o, n);
+});
+}();
+drift.SNIPPET_VERSION = '0.3.1';
+drift.load('r6mhyp5d97hf');
+</script>
+<!-- End of Async Drift Code -->
 
 <script src="https://zakerytclarke.github.io/chatbot.js/chatbot.js">
 </script>
@@ -358,30 +383,6 @@ adduser();
 });
 
 </script>
-    <!-- Start of Async Drift Code -->
-<script>
-!function() {
-  var t;
-  if (t = window.driftt = window.drift = window.driftt || [], !t.init) return t.invoked ? void (window.console && console.error && console.error("Drift snippet included twice.")) : (t.invoked = !0, 
-  t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ], 
-  t.factory = function(e) {
-    return function() {
-      var n;
-      return n = Array.prototype.slice.call(arguments), n.unshift(e), t.push(n), t;
-    };
-  }, t.methods.forEach(function(e) {
-    t[e] = t.factory(e);
-  }), t.load = function(t) {
-    var e, n, o, i;
-    e = 3e5, i = Math.ceil(new Date() / e) * e, o = document.createElement("script"), 
-    o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + i + "/" + t + ".js", 
-    n = document.getElementsByTagName("script")[0], n.parentNode.insertBefore(o, n);
-  });
-}();
-drift.SNIPPET_VERSION = '0.3.1';
-drift.load('r6mhyp5d97hf');
-</script>
-<!-- End of Async Drift Code -->
 </div>
 </body>
 </html

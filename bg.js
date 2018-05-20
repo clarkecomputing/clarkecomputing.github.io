@@ -1,4 +1,4 @@
-//type("Your Online Presence Matters more than your Physical One.");
+type("Your Online Presence Matters more than your Physical One.");
 if(window.innerWidth<window.innerHeight){
 document.getElementById("chatbotdiv").style.height="70vh";
 }
@@ -7,7 +7,7 @@ function up(){
   location.href = "#top";
   history.replaceState(null,null,url);
 }
-/*
+
 function type(word){
   document.getElementById("typey").innerHTML=document.getElementById("typey").innerHTML+word.substr(0,1);
   if(word.length>0){
@@ -16,7 +16,7 @@ function type(word){
 
     }
   }
- */
+ 
   var canvas=document.getElementById("backdrop");
   var ctx = canvas.getContext('2d');
   canvas.width  = window.innerWidth;

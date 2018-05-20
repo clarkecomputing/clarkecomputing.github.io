@@ -15,13 +15,19 @@ function send(){
   }else{
    if(name==""){
       document.getElementById("name").style.border="1px red solid";   
-   }  
+   }else{
+      document.getElementById("name").style.border="1px white solid";   
+   }   
    if(email==""||email.indexOf('@')==-1){
       document.getElementById("email").style.border="1px red solid";   
-   }  
+   }else{
+      document.getElementById("email").style.border="1px white solid";   
+   }     
    if(msg==""){
       document.getElementById("msgform").style.border="1px red solid";   
-   }    
+   }else{
+      document.getElementById("msgform").style.border="1px white solid";   
+   }       
      
      
   }   

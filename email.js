@@ -8,7 +8,7 @@ function send(){
   email=document.getElementById("email").value;
   msg=document.getElementById("msgform").value;
   
-  if(name!=""&&email!=""&&msgform!=""&&email.indexOf('@')>-1){  
+  if(name!=""&&email!=""&&msg!=""&&email.indexOf('@')>-1){  
       sendemail(name,email,msg);
       document.getElementById("formdiv").style.display="none";
       document.getElementById("sentdiv").style.display="block";

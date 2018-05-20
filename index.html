@@ -5,91 +5,19 @@
 <meta name="theme-color" content="#000000" />
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
-<!--
-<link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">-->
+<link rel="stylesheet" type="text/css" href="style.css">
 <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif" rel="stylesheet">
 <title>
 &#60Clarke>&#60/Computing>
 </title>
-<style>
-body {
-background-color:black;
-color:white;
-font-family: 'Orbitron', sans-serif;
-font-size:125%;
-}
-::-webkit-scrollbar {
-    width: 12px;
-}
-
-::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(255,255,255,0.3);
-    border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    -webkit-box-shadow: inset 0 0 6px rgba(255,255,255,0.5);
-}
-.container{
-box-shadow: inset 1px 1px 20px white;
-width:100%;
-text-align:center;
-padding:3px;
-}
-.menu{
-  color:white;
-  font-size:150%;
-}
-p{
-  margin:20px;
-}
-.user{
-  color:black;
-  display:block;
-  position:static;
-  margin:5px;
-  width:80%;
-  padding:10px;
-  background-color:#91bee0;
-  border-radius:50px;
-  right:0px;
-  margin-bottom:10px;
-  /*text-align:right;*/
-}
-.bot{
-  color:black;
-  display:block;
-  position:static;
-  margin:5px;
-  width:80%;
-  padding:10px;
-  background-color:#e0e0e0;
-  border-radius:50px;
-  margin-bottom:10px;
-}
-a{
-  color:white;
-}
-.form{
-  width:80%;
-  box-shadow: 1px 1px 20px white;
-    background-color:black;
-    color:white;
-    padding:10px;
-    margin:5px;
-}
-</style>
 <body>
 
-<canvas id="backdrop" style="z-index:-1;position:fixed;background-color:black;">
-</canvas>
-<!---
-<img onclick="showbot();" style="border:5px white solid;position:fixed;right:1vw;top:1vw;border-radius:50%;width:10%;z-index:100;box-shadow: inset 1px 1px 20px white;" src="robut.png">
---->
-<!--
-    <img onclick="up();" style="border:5px white solid;position:fixed;right:2.5vw;bottom:1vw;border-radius:50%;width:5%;z-index:30;box-shadow: inset 1px 1px 20px white;" src="arrow.png">
--->
+<canvas id="backdrop" style="z-index:-1;position:fixed;background-color:black;"></canvas>
+<!--Begin Chatbot-->
+<img onclick="showbot();" style="border:5px white solid;position:fixed;right:1vw;top:1vw;border-radius:50%;width:10%;z-index:100;box-shadow: inset 1px 1px 20px white;" src="images/robut.png">
+
+    <img onclick="up();" style="border:5px white solid;position:fixed;right:2.5vw;bottom:1vw;border-radius:50%;width:5%;z-index:30;box-shadow: inset 1px 1px 20px white;" src="images/arrow.png">
+
 <div id="chatbotdiv" style="left:0%;top:0%;box-shadow: inset 1px 1px 20px white;position:fixed;background-color:black;color:white;width:100vw;height:100vh;overflow:hidden;border:1px white solid;;display:none;z-index:50;">
 
   <div id="msg" style="height:80%;overflow-y:scroll;overflow-x:hidden;display:block;width:98%;margin-top:10px;">
@@ -97,49 +25,51 @@ a{
   <div class="bot">
   Hi there. My name is Eliza! How can I help you?
   </div>
-
-
-
   </div>
    <div style="height:15%;">
-
-  <input id="textio" type="text" style="width:75%;margin-left:3%;height:60%;vertical-align:middle;">
+  <input id="textio" type="text" style="border-radius:10px;font-size:5vmin;width:75%;margin-left:3%;height:60%;vertical-align:middle;">
   <button onclick="adduser();" type="submit" style="border-radius:5px;max-width:15%;vertical-align:middle;max-height:100%;">
   <img src="http://zakerytclarke.github.io/assets/materialicons/send.png" style="width:100%;">
     </div>
   </button>
   </div>
 
-<div style="position:fixed;width:98vw;height:100vh;background-color:rgba(0,0,0,0.7);overflow:auto;">
+<!--End Chatbot-->
+<div style="z-index:-1;position:fixed;width:98vw;height:100vh;background-color:rgba(0,0,0,0.7);">
+</div>
 <div style="width:80%;min-height:80vh;margin-left:10%;background-color:rgba(0,0,0,0.8);padding:10px;">
 <div id="top" class="container">
 <h1>
 &#60Clarke>&#60/Computing>
 </h1>
 <h2 id="typey">
->_
+>_Your Online Prescence Matters More than Your Physical One
 </h2>
 </div>
 <div class="container" style="width:100%;text-align:center;padding-top:15px;padding-bottom:10px;">
 <a href="index.html" class="menu">
-About | </a>
+About Us</a>
 <a href="webdesign.html" class="menu">
-Web Design | </a>
+Web Design</a>
+<a href="branding.html" class="menu">
+Branding</a>
 <a href="data.html" class="menu">
-Data Analytics | </a>
+Data Analytics</a>
 <a href="contact.html" class="menu">
-Contact Us </a>
+Contact Us</a>
 </div>
 
+<!--Begin Page-->
 <div class="container" id="about">
 <h2>
 Meet Your Team
 </h2>
+<img src="images/icons/phablet.png" style="width:30%;background-color:white;border-radius:15px;padding:3px;">
 <p>
 Here at &#60Clarke>&#60/Computing>, we have the expertise to create your projects. With over 5 years experience in web design and graphics, we are guaranteed to deliver an on-time, visually stunning, and most important-functioning product. Contact us to see how we can improve your business today!
 </p>
 <div style="width:33%;text-align:center;display:inline-block;">
-<img src="zak.png" style="border-radius:50%;width:70%;">
+<img src="images/zak.png" style="border-radius:50%;width:70%;">
 <h3>
 Zakery Clarke
 </h3>
@@ -148,7 +78,7 @@ CEO/Programmer
 </p>
 </div>
 <div style="width:33%;text-align:center;display:inline-block;">
-<img src="nolan.png" style="border-radius:50%;width:70%;">
+<img src="images/nolan.png" style="border-radius:50%;width:70%;">
 <h3>
 Nolan DiGreco
 </h3>
@@ -158,230 +88,19 @@ Front-End Designer
 </div>
 </div>
 
-<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script type="text/javascript">
-     (function(){
-        emailjs.init("user_jREWum9z3YCWAG17rUsxu");
-     })();
-  </script>
-<script>
-function send(){
-  name=document.getElementById("name").value;
-  email=document.getElementById("email").value;
-  msg=document.getElementById("msgform").value;
-  sendemail(name,email,msg);
-  document.getElementById("formdiv").style.display="none";
-  document.getElementById("sentdiv").style.display="block";
-}
-
-function sendemail(name,email,msg){
-emailjs.send("gmail", "contact", {"name":name,"email":email,"msg":msg})
-  }
-</script>
-<script>
-type("Your Online Presence Matters more than your Physical One.");
-
-function up(){
-  var url = location.href;
-  location.href = "#top";
-  history.replaceState(null,null,url);
-}
-
-function type(word){
-  document.getElementById("typey").innerHTML=document.getElementById("typey").innerHTML+word.substr(0,1);
-  if(word.length>0){
-  setTimeout(function(){type(word.substr(1, word.length))}, 50);
-    }else{
-
-      }
-  }
-  var canvas=document.getElementById("backdrop");
-  var ctx = canvas.getContext('2d');
-  canvas.width  = window.innerWidth;
-  canvas.height = window.innerHeight;
-  ctx.fillStyle="white";
-  ctx.strokeStyle="white";
-  ctx.lineWidth=1;
-  var h=canvas.height/2;
-  var w=canvas.width/2;
-  var sp=[];
-  var m=Math.max(w,h)
-  for(i=0;i<m;i=i+10){
-  sp.push(new spiral());
-  }
-  function spiral() {
-  this.sa=2*Math.PI*Math.random();
-  this.ea=2*Math.PI*Math.random();
-  this.speed=(Math.random()*10-5)/20;
-  }
-  setInterval(function(){refresh(); }, 100);
-  function refresh(){
-  ctx.clearRect(0,0,canvas.width, canvas.height);
-  for(i=0;i<sp.length;i=i+1){
-  ctx.beginPath();
-  ctx.arc(w,h,i*10,sp[i].sa,sp[i].ea);
-  sp[i].sa+=sp[i].speed;
-  sp[i].ea+=sp[i].speed;
-  //sp[i].speed+=(Math.random()*10-5)/50;;
-  ctx.stroke();
-  }
-  }
-</script>
-<!-- Start of Async Drift Code -->
-<script>
-!function() {
-var t;
-if (t = window.driftt = window.drift = window.driftt || [], !t.init) return t.invoked ? void (window.console && console.error && console.error("Drift snippet included twice.")) : (t.invoked = !0,
-t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ],
-t.factory = function(e) {
-return function() {
-  var n;
-  return n = Array.prototype.slice.call(arguments), n.unshift(e), t.push(n), t;
-};
-}, t.methods.forEach(function(e) {
-t[e] = t.factory(e);
-}), t.load = function(t) {
-var e, n, o, i;
-e = 3e5, i = Math.ceil(new Date() / e) * e, o = document.createElement("script"),
-o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + i + "/" + t + ".js",
-n = document.getElementsByTagName("script")[0], n.parentNode.insertBefore(o, n);
-});
-}();
-drift.SNIPPET_VERSION = '0.3.1';
-drift.load('r6mhyp5d97hf');
-</script>
-<!-- End of Async Drift Code -->
-
-<script src="https://zakerytclarke.github.io/chatbot.js/chatbot.js">
-</script>
-<script src="eliza.cb">
-</script>
-<script>
-var contactreply="Here's our contact information: clarkecomputing@gmail.com or 1.505.234.9665";
-bot.addreply("default",["n/a"],["I'm sorry, I don't quite understand that. Try asking me about the services we provide, our team, or our contact information"]);
-bot.addreply("default",["what","can","you","do"],["I can do many things! Try asking me about the services we provide, our team, or our contact information"]);
-
-bot.addreply("default",["contact"],[""],"contact");
-bot.addreply("default",["email"],[""],"contact");
-bot.addreply("default",["message"],[""],"contact");
-
-bot.addreply("default",["team"],["Sure, we have an experienced team, who would you like to know about?"],"team");
-bot.addreply("default",["staff"],["Sure, we have an experienced team, who would you like to know about?"],"team");
-bot.addreply("default",["employee"],["Sure, we have an experienced team, who would you like to know about?"],"team");
-
-bot.addreply("default",["services"],["Our team offers many services. We specialize in designing stellar websites for both business and personal use. We also work with Data Analysis in order to create insights and advance business technologies."]);
-bot.addreply("default",["products"],["Our team offers many services. We specialize in designing stellar websites for both business and personal use. We also work with Data Analysis in order to create insights and advance business technologies."]);
-bot.addreply("default",["web"],["We can take care of your entire website, from concept to deployment. We design all websites from scratch using modern standards that will allow you to easily deploy and maintain your website."]);
-bot.addreply("default",["design"],["We can take care of your entire website, from concept to deployment. We design all websites from scratch using modern standards that will allow you to easily deploy and maintain your website."]);
-bot.addreply("default",["data"],["We are expereienced in performing data analysis, creatng advanced systems, and gaining valuable insights for businesses."]);
-bot.addreply("default",["analysis"],["We are expereienced in performing data analysis, creatng advanced systems, and gaining valuable insights for businesses."]);
-bot.addreply("default",["analytics"],["We are expereienced in performing data analysis, creatng advanced systems, and gaining valuable insights for businesses."]);
-
-
-bot.addstate("team");
-bot.addreply("team",["n/a"],["I'm not sure who that is. If you're done learning about our staff, feel free to say 'exit'"]);
-bot.addreply("team",["exit"],["Ok. How else can I help you?"],"default");
-bot.addreply("team",["back"],["Ok. How else can I help you?"],"default");
-bot.addreply("team",["quit"],["Ok. How else can I help you?"]);
-bot.addreply("team",["nolan"],["Nolan DiGreco is a Front-End Web Designer who focuses in aesthetic design and User Interfaces."]);
-bot.addreply("team",["digreco"],["Nolan DiGreco is a Front-End Web Designer who focuses in aesthetic design and User Interfaces."]);
-bot.addreply("team",["zak"],["Zakery Clarke is a professional programmer who specializes in framework design and data analysis."]);
-bot.addreply("team",["clarke"],["Zakery Clarke is a professional programmer who specializes in framework design and data analysis."]);
-bot.addreply("team",["eliza"],["You want to learn about me? I'm flattered. I am Eliza, the chatbot who trys to help with our customer experience."]);
-bot.addreply("team",["bot"],["You want to learn about me? I'm flattered. I am Eliza, the chatbot who trys to help with our customer experience."]);
-
-bot.addstate("contact");
-bot.addreply("contact",["default"],["Would you like to send a message to our team?"]);
-bot.addreply("contact",["yes"],[""],"cname");
-bot.addreply("contact",["no"],["Ok, well here's our contact info just in case: clarkecomputing@gmail.com or 1(505)336-0208."],"default");
-bot.addreply("contact",["n/a"],["A simple yes or no will work."]);
-
-var cname="";
-var cemail="";
-var cmsg="";
-function setcname(){
-  cname=globalinput;
-  alert(cname);
-}
-function setcemail(){
-  cemail=globalinput;
-  alert(cemail);
-}
-function setcmsg(){
-alert("hi");
-  cmsg=globalinput;
-  alert(cmsg);
-}
-function csend(){
-  sendemail(cname,cemail,cmsg);
-}
-bot.addstate("cname");
-bot.addreply("cname",["default"],["What is your name?"]);
-bot.addreply("cname",["n/a"],[""],"cemail","setcname");
-
-bot.addstate("cemail");
-bot.addreply("cemail",["default"],["What is your email address?"]);
-bot.addreply("cemail",["n/a"],[""],"cmsg","setcemail");
-
-bot.addstate("cmsg");
-bot.addreply("cmsg",["default"],["What's your message?"]);
-bot.addreply("cmsg",["n/a"],["Your message has been succesfully sent."],"default","setcmsg");
-
-
-
-</script>
-
-<script>
-var globalinput="";
-function showbot(){
-
-  if(document.getElementById("chatbotdiv").style.display=="block"){
-    document.getElementById("chatbotdiv").style.display="none";
-  }else{
-    document.getElementById("chatbotdiv").style.display="block";
-  }
-}
-
-
-function addbot(msg){
-  var p=document.getElementById("msg");
-    var newelem=document.createElement("div");
-newelem.setAttribute('class',"bot");
-    newelem.innerHTML=msg;
-p.appendChild(newelem);
-  scroll("msg");
-}
-
-function adduser(){
-  var input=document.getElementById("textio").value;
-
-if(input!=null&&input!=""){
-  globalinput=input;
-  var p=document.getElementById("msg");
-    var newelem=document.createElement("div");
-newelem.setAttribute('class',"user");
-  newelem.innerHTML=input;
-  document.getElementById("textio").value="";
-p.appendChild(newelem);
-
-addbot(bot.reply(input));
-}
-
-}
-
-function scroll(id){
-   var div = document.getElementById(id);
-   div.scrollTop = div.scrollHeight - div.clientHeight;
-}
-
-
-document.body.addEventListener( 'keyup', function (e) {
-  if ( e.keyCode == 13 ) {
-adduser();
-  }
-});
-
-</script>
+<!--End Page-->
+<div class="container" style="padding-top:20px;padding-bottom:20px">
+<a href="mailto:clarkecomputing@gmail.com" class="menu" style="font-size:100%">
+clarkecomputing@gmail.com</a>
+<a href="tel:505-336-0208" class="menu" style="font-size:100%">
+1.505.336.0208</a>
 </div>
+<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script src="email.js"></script>
+<script src="bg.js"></script>
+<script src="https://zakerytclarke.github.io/chatbot.js/chatbot.js"></script>
+<script src="eliza.cb"></script>
+<script src="clarkebot.cb"></script>
+
 </body>
-</html
+</html>

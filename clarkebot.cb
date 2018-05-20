@@ -21,6 +21,7 @@ bot.addreply("default",["brand"],["We can help redefine your brand by designing 
 bot.addreply("default",["data"],["We are expereienced in performing data analysis, creatng advanced systems, and gaining valuable insights for businesses."]);
 bot.addreply("default",["analysis"],["We are expereienced in performing data analysis, creatng advanced systems, and gaining valuable insights for businesses."]);
 bot.addreply("default",["analytics"],["We are expereienced in performing data analysis, creatng advanced systems, and gaining valuable insights for businesses."]);
+bot.addreply("default",["hiring"],["Currently we are not actively hiring, but feel free to email us your resume!"]);
 
 
 bot.addstate("team");

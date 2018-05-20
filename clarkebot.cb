@@ -1,0 +1,123 @@
+var contactreply="Here's our contact information: <a style='color:blue' href='mailto:clarkecomputing@gmail.com'>clarkecomputing@gmail.com</a> or <a style='color:blue' href='tel:505-234-9665'>1.505.234.9665</a>";
+bot.addreply("default",["n/a"],["I'm sorry, I don't quite understand that. Try asking me about the services we provide, our team, or our contact information"]);
+bot.addreply("default",["what","can","you","do"],["I can do many things! Try asking me about the services we provide, our team, or our contact information"]);
+
+bot.addreply("default",["contact"],[contactreply]);
+bot.addreply("default",["email"],[contactreply]);
+bot.addreply("default",["message"],[contactreply]);
+
+bot.addreply("default",["team"],["Sure, we have an experienced team, who would you like to know about?"],"team");
+bot.addreply("default",["staff"],["Sure, we have an experienced team, who would you like to know about?"],"team");
+bot.addreply("default",["employee"],["Sure, we have an experienced team, who would you like to know about?"],"team");
+
+bot.addreply("default",["services"],["Our team offers many services. We specialize in designing stellar websites for both business and personal use. We also work with Data Analysis in order to create insights and advance business technologies. Our in-house graphic designer can also help you redefine your brand."]);
+bot.addreply("default",["products"],["Our team offers many services. We specialize in designing stellar websites for both business and personal use. We also work with Data Analysis in order to create insights and advance business technologies. Our in-house graphic designer can also help you redefine your brand."]);
+bot.addreply("default",["web"],["We can take care of your entire website, from concept to deployment. We design all websites from scratch using modern standards that will allow you to easily deploy and maintain your website."]);
+bot.addreply("default",["design"],["We can take care of your entire website, from concept to deployment. We design all websites from scratch using modern standards that will allow you to easily deploy and maintain your website."]);
+bot.addreply("default",["hosting"],["We offer excellent hosting for websites and applications from our server with included updates and maintenance."]);
+bot.addreply("default",["logo"],["We can help redefine your brand by designing logos, business cards, flyers etc. that can help boost your brand awareness."]);
+bot.addreply("default",["graphic"],["We can help redefine your brand by designing logos, business cards, flyers etc. that can help boost your brand awareness."]);
+bot.addreply("default",["brand"],["We can help redefine your brand by designing logos, business cards, flyers etc. that can help boost your brand awareness."]);
+bot.addreply("default",["data"],["We are expereienced in performing data analysis, creatng advanced systems, and gaining valuable insights for businesses."]);
+bot.addreply("default",["analysis"],["We are expereienced in performing data analysis, creatng advanced systems, and gaining valuable insights for businesses."]);
+bot.addreply("default",["analytics"],["We are expereienced in performing data analysis, creatng advanced systems, and gaining valuable insights for businesses."]);
+
+
+bot.addstate("team");
+bot.addreply("team",["n/a"],["I'm not sure who that is. If you're done learning about our staff, feel free to say 'exit'"]);
+bot.addreply("team",["exit"],["Ok. How else can I help you?"],"default");
+bot.addreply("team",["back"],["Ok. How else can I help you?"],"default");
+bot.addreply("team",["quit"],["Ok. How else can I help you?"]);
+bot.addreply("team",["nolan"],["Nolan DiGreco is a Front-End Web Designer who focuses in aesthetic design and User Interfaces."]);
+bot.addreply("team",["digreco"],["Nolan DiGreco is a Front-End Web Designer who focuses in aesthetic design and User Interfaces."]);
+bot.addreply("team",["zak"],["Zakery Clarke is a professional programmer who specializes in framework design and data analysis."]);
+bot.addreply("team",["clarke"],["Zakery Clarke is a professional programmer who specializes in framework design and data analysis."]);
+bot.addreply("team",["eliza"],["You want to learn about me? I'm flattered. I am Eliza, the chatbot who trys to help with our customer experience."]);
+bot.addreply("team",["bot"],["You want to learn about me? I'm flattered. I am Eliza, the chatbot who trys to help with our customer experience."]);
+
+/*
+bot.addstate("contact");
+bot.addreply("contact",["default"],["Would you like to send a message to our team?"]);
+bot.addreply("contact",["yes"],[""],"cname");
+bot.addreply("contact",["no"],["Ok, well here's our contact info just in case: clarkecomputing@gmail.com or 1(505)336-0208."],"default");
+bot.addreply("contact",["n/a"],["A simple yes or no will work."]);
+
+var cname="";
+var cemail="";
+var cmsg="";
+function setcname(){
+  cname=globalinput;
+  alert(cname);
+}
+function setcemail(){
+  cemail=globalinput;
+  alert(cemail);
+}
+function setcmsg(){
+alert("hi");
+  cmsg=globalinput;
+  alert(cmsg);
+}
+function csend(){
+  sendemail(cname,cemail,cmsg);
+}
+bot.addstate("cname");
+bot.addreply("cname",["default"],["What is your name?"]);
+bot.addreply("cname",["n/a"],[""],"cemail","setcname");
+
+bot.addstate("cemail");
+bot.addreply("cemail",["default"],["What is your email address?"]);
+bot.addreply("cemail",["n/a"],[""],"cmsg","setcemail");
+
+bot.addstate("cmsg");
+bot.addreply("cmsg",["default"],["What's your message?"]);
+bot.addreply("cmsg",["n/a"],["Your message has been succesfully sent."],"default","setcmsg");
+*/
+var globalinput="";
+function showbot(){
+
+  if(document.getElementById("chatbotdiv").style.display=="block"){
+    document.getElementById("chatbotdiv").style.display="none";
+  }else{
+    document.getElementById("chatbotdiv").style.display="block";
+  }
+}
+
+
+function addbot(msg){
+  var p=document.getElementById("msg");
+    var newelem=document.createElement("div");
+newelem.setAttribute('class',"bot");
+    newelem.innerHTML=msg;
+p.appendChild(newelem);
+  scroll("msg");
+}
+
+function adduser(){
+  var input=document.getElementById("textio").value;
+
+if(input!=null&&input!=""){
+  globalinput=input;
+  var p=document.getElementById("msg");
+    var newelem=document.createElement("div");
+newelem.setAttribute('class',"user");
+  newelem.innerHTML=input;
+  document.getElementById("textio").value="";
+p.appendChild(newelem);
+
+addbot(bot.reply(input));
+}
+
+}
+
+function scroll(id){
+   var div = document.getElementById(id);
+   div.scrollTop = div.scrollHeight - div.clientHeight;
+}
+
+
+document.body.addEventListener( 'keyup', function (e) {
+  if ( e.keyCode == 13 ) {
+adduser();
+  }
+});

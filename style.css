@@ -1,0 +1,74 @@
+html{
+   box-sizing: border-box;
+}
+body {
+background-color:black;
+color:white;
+font-family: 'Orbitron', sans-serif;
+font-size:125%;
+height:100vh;
+}
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(255,255,255,0.3);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(255,255,255,0.5);
+}
+.container{
+box-shadow: inset 1px 1px 20px white;
+width:100%;
+text-align:center;
+padding:3px;
+}
+.menu{
+  color:white;
+  font-size:5vmin;
+  margin:10px;
+}
+p{
+  margin:20px;
+}
+.user{
+  color:black;
+  display:block;
+  position:static;
+  margin:5px;
+  width:80%;
+  padding:10px;
+  background-color:#91bee0;
+  border-radius:50px;
+  right:0px;
+  margin-bottom:10px;
+  /*text-align:right;*/
+  font-size:5vmin;
+}
+.bot{
+    font-size:5vmin;
+  color:black;
+  display:block;
+  position:static;
+  margin:5px;
+  width:80%;
+  padding:10px;
+  background-color:#e0e0e0;
+  border-radius:50px;
+  margin-bottom:10px;
+}
+a{
+  color:white;
+}
+.form{
+  width:80%;
+  box-shadow: 1px 1px 20px white;
+    background-color:black;
+    color:white;
+    padding:10px;
+    margin:5px;
+}

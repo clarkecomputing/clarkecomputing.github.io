@@ -1,4 +1,4 @@
-var contactreply="Here's our contact information: <a style='color:blue' href='mailto:clarkecomputing@gmail.com'>clarkecomputing@gmail.com</a> or <a style='color:blue' href='tel:505-234-9665'>1.505.234.9665</a>";
+var contactreply="Here's our contact information: <a style='color:blue' href='mailto:clarkecomputing@gmail.com'>clarkecomputing@gmail.com</a> or <a style='color:blue' href='tel:505-336-0208'>1.505.336.0208</a>";
 bot.addreply("default",["n/a"],["I'm sorry, I don't quite understand that. Try asking me about the services we provide, our team, or our contact information"]);
 bot.addreply("default",["what","can","you","do"],["I can do many things! Try asking me about the services we provide, our team, or our contact information"]);
 

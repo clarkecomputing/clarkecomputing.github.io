@@ -2,51 +2,63 @@
 <!doctype html>
 <html>
 <head>
-<meta name="theme-color" content="#000000" />
+<meta name="theme-color" content="#3d414c"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" type="text/css" href="style.css">
 <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif" rel="stylesheet">
+<style>
+
+</style>
 <title>
-&#60Clarke>&#60/Computing>
+Clarke Computing
 </title>
 <body>
+<!--Begin Background-->
+<!--  <div class="bgImage"></div>-->
+  <svg class="blobCont" style="z-index:-1;left:0;top:0;overflow-x:hidden;">
+  		<image xlink:href="images/gradient.png" mask="url(#mask)" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" />
+  		<defs>
+  			<mask id="mask" x="0" y="0">
+  				<g style="filter: url(#gooey)">
+            <circle class="blob" cx="10%" cy="10%" r="80" fill="white" stroke="white"/>
+  					<circle class="blob" cx="50%" cy="10%" r="40" fill="white" stroke="white"/>
+  					<circle class="blob" cx="17%" cy="15%" r="70" fill="white" stroke="white"/>
+  					<circle class="blob" cx="90%" cy="20%" r="120" fill="white" stroke="white"/>
+  					<circle class="blob" cx="30%" cy="25%" r="30" fill="white" stroke="white"/>
+            <circle class="blob" cx="50%" cy="60%" r="80" fill="white" stroke="white"/>
+  					<circle class="blob" cx="70%" cy="90%" r="10" fill="white" stroke="white"/>
+  					<circle class="blob" cx="90%" cy="60%" r="90" fill="white" stroke="white"/>
+  					<circle class="blob" cx="30%" cy="90%" r="80" fill="white" stroke="white"/>
+            <circle class="blob" cx="10%" cy="10%" r="80" fill="white" stroke="white"/>
+  					<circle class="blob" cx="50%" cy="10%" r="20" fill="white" stroke="white"/>
+  					<circle class="blob" cx="17%" cy="15%" r="70" fill="white" stroke="white"/>
+  					<circle class="blob" cx="40%" cy="20%" r="120" fill="white" stroke="white"/>
+    			</g>
+  			</mask>
+  			<filter id="gooey" height="130%">
+  				<feGaussianBlur in="SourceGraphic" stdDeviation="15" result="blur" />
+  				<feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+      	</filter>
+  		</defs>
 
-<canvas id="backdrop" style="z-index:-1;position:fixed;background-color:black;"></canvas>
-<!--Begin Chatbot-->
-<img onclick="showbot();" style="border:5px white solid;position:fixed;right:1vw;top:1vw;border-radius:50%;width:10%;z-index:100;box-shadow: inset 1px 1px 20px white;" src="images/robut.png">
+  	</svg>
+<div style="position:fixed;top:0;left:0;height:100vh;width:100vw;background-color:rgba(100,100,100,0.8);z-index:-1;"></div>
+<!--End Background-->
 
-    <img onclick="up();" style="border:5px white solid;position:fixed;right:2.5vw;bottom:1vw;border-radius:50%;width:5%;z-index:30;box-shadow: inset 1px 1px 20px white;" src="images/arrow.png">
-
-<div id="chatbotdiv" style="left:0%;top:0%;box-shadow: inset 1px 1px 20px white;position:fixed;background-color:black;color:white;width:100vw;height:100vh;overflow:hidden;border:1px white solid;;display:none;z-index:50;">
-
-  <div id="msg" style="height:80%;overflow-y:scroll;overflow-x:hidden;display:block;width:98%;margin-top:10px;">
-
-  <div class="bot">
-  Hi there. My name is Eliza! How can I help you?
-  </div>
-  </div>
-   <div style="height:15%;">
-  <input id="textio" type="text" style="border-radius:10px;font-size:5vmin;width:75%;margin-left:3%;height:60%;vertical-align:middle;">
-  <button onclick="adduser();" type="submit" style="border-radius:5px;max-width:15%;vertical-align:middle;max-height:100%;">
-  <img src="http://zakerytclarke.github.io/assets/materialicons/send.png" style="width:100%;">
-    </div>
-  </button>
-  </div>
-
-<!--End Chatbot-->
-<div style="z-index:-1;position:fixed;width:98vw;height:100vh;background-color:rgba(0,0,0,0.7);">
+<div id="menubutton" style="" onclick="menuclick();">
+<div id="menutop" style="position:absolute;background-color:white;width:80%;height:15%;border-radius:20px;top:15%;left:10%"></div>
+<div id="menumiddle" style="position:absolute;background-color:white;width:60%;height:15%;border-radius:20px;top:40%;left:30%"></div>
+<div id="menubottom" style="position:absolute;background-color:white;width:80%;height:15%;border-radius:20px;top:65%;left:10%"></div>
 </div>
-<div style="width:80%;min-height:80vh;margin-left:10%;background-color:rgba(0,0,0,0.8);padding:10px;">
-<div id="top" class="container">
-<h1 id="title">
-&#60Clarke>&#60/Computing>
+<div style="text-align:left;left:0;padding-left:0;margin-left:0;">
+<h1 style="margin-left:50px;">
+Clarke Computing
 </h1>
-<h2 id="typey">
->_    
-</h2>
 </div>
-<div class="container" style="width:100%;text-align:center;padding-top:15px;padding-bottom:10px;">
+<div style="width:80%;margin-left:10%;">
+<div id="menu"  style="display:none" class="container">
 <a href="index.html" class="menu">
 About Us</a>
 <a href="webdesign.html" class="menu">
@@ -59,8 +71,23 @@ Data Analytics</a>
 Contact Us</a>
 </div>
 
+<div id="menumobile"  style="" class="container">
+<a href="index.html" class="menu">
+About Us</a><br>
+<a href="webdesign.html" class="menu">
+Web Design</a><br>
+<a href="branding.html" class="menu">
+Branding</a><br>
+<a href="data.html" class="menu">
+Data Analytics</a><br>
+<a href="contact.html" class="menu">
+Contact Us</a><br>
+<a href="mailto:clarkecomputing@gmail.com" class="menu">
+clarkecomputing@gmail.com</a><br>
+<a href="tel:505-336-0208" class="menu">
+1.505.336.0208</a>
+</div>
 <!--Begin Page-->
-
 <div id="contact" class="container">
 <h2>
 Contact Us
@@ -71,26 +98,56 @@ Your message has been sent and you will receive a reply shortly.<br>Thank you!
 <div id="formdiv" style="width:100%;">
 <input id="name" type="text" placeholder="Name" class="form" style="font-size:4vmin;" required><br>
 <input id="email" type="email" placeholder="Email"class="form" style="font-size:4vmin;" required><br>
-<textarea id="msgform" class="form" placeholder="How can we help you?" style="font-size:4vmin;" rows="6">
+<textarea id="msgform" class="form" placeholder="How can we help you?" style="font-size:4vmin;resize:none;" rows="6">
 </textarea>
 <br>
-<button class="form" style="width:auto;border-radius:10%;font-size:4vmin;margin-bottom:20px;" onclick="send()">
+<button class="form" style="width:auto;border-radius:10%;font-size:4vmin;margin-bottom:20px;color:white;" onclick="send()">
 Send
 </button>
 </div>
 </div>
 <!--End Page-->
-<div class="container" style="padding-top:20px;padding-bottom:20px">
+</div>
+<div class="container" style="margin-top:20px;padding-top:20px;padding-bottom:20px;background-color:rgba(0,0,0,0.9);border-radius:10px;width:80%;margin-left:10%;">
 <a href="mailto:clarkecomputing@gmail.com" class="menu" style="font-size:100%">
 clarkecomputing@gmail.com</a>
 <a href="tel:505-336-0208" class="menu" style="font-size:100%">
 1.505.336.0208</a>
 </div>
+</div>
+
+</div>
+
 <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
 <script src="email.js"></script>
-<script src="bg.js"></script>
-<script src="https://zakerytclarke.github.io/chatbot.js/chatbot.js"></script>
-<script src="eliza.cb"></script>
-<script src="clarkebot.cb"></script>
+<script src="misc.js"></script>
+<!-- Start of Async Drift Code -->
+<script>
+"use strict";
+
+!function() {
+  var t = window.driftt = window.drift = window.driftt || [];
+  if (!t.init) {
+    if (t.invoked) return void (window.console && console.error && console.error("Drift snippet included twice."));
+    t.invoked = !0, t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ],
+    t.factory = function(e) {
+      return function() {
+        var n = Array.prototype.slice.call(arguments);
+        return n.unshift(e), t.push(n), t;
+      };
+    }, t.methods.forEach(function(e) {
+      t[e] = t.factory(e);
+    }), t.load = function(t) {
+      var e = 3e5, n = Math.ceil(new Date() / e) * e, o = document.createElement("script");
+      o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js";
+      var i = document.getElementsByTagName("script")[0];
+      i.parentNode.insertBefore(o, i);
+    };
+  }
+}();
+drift.SNIPPET_VERSION = '0.3.1';
+drift.load('r6mhyp5d97hf');
+</script>
+<!-- End of Async Drift Code -->
 </body>
 </html>
